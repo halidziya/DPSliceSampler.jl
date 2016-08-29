@@ -22,7 +22,7 @@ scatter(data[1,:],data[2,:],color=y)
 xt = data';
 plot(scatter(xt[:,1],xt[:,2],color=z,marker=(:+,2)),scatter(xt[:,1],xt[:,2],color=y,marker=(:+,2)))
 include("HalidUtils.jl")
-plotCovs(μ[β.>0.01],Σ[β.>0.01])
+#plotCovs(μ[β.>0.01],Σ[β.>0.01])
 plot!()
 
 cost = confusmat(10,y,z)
@@ -34,4 +34,4 @@ ts = sum(cm,2)
 ps = sum(cm,1)
 prec = diag(cm)./ps'
 recall = diag(cm)./ts
-print mean(2./(1./prec + 1./recall))
+print(mean(2./(1./prec + 1./recall)))
